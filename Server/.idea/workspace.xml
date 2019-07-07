@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c8d8e16e-f992-47fa-929e-c030a3a2a517" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/www">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/post.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="110" column="15" selection-start-line="110" selection-start-column="15" selection-end-line="110" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/usersubmit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="28" column="97" selection-start-line="28" selection-start-column="97" selection-end-line="28" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/registrastion.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1349">
+              <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2128">
+              <caret line="112" selection-start-line="112" selection-end-line="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/db.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>postsubject</find>
+      <find>count</find>
+      <find>iscollect</find>
+      <find>SELECT post.*,headphoto</find>
+      <find>SELECT reply.*,username as</find>
+      <find>SELECT post.*,headphoto,username as postauthor from post,user WHERE postauthorid = userid and postid =</find>
+      <find>getcollect</find>
+      <find>router.post</find>
+      <find>get</find>
+      <find>postnew</find>
+      <find>app.listen</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/db.js" />
+        <option value="$PROJECT_DIR$/routes/userssubmit.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/routes/db.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/routes/forpassword.js" />
+        <option value="$PROJECT_DIR$/routes/admin.js" />
+        <option value="$PROJECT_DIR$/routes/innermessage.js" />
+        <option value="$PROJECT_DIR$/routes/post.js" />
+        <option value="$PROJECT_DIR$/routes/registrastion.js" />
+        <option value="$PROJECT_DIR$/routes/usersubmit.js" />
+        <option value="$PROJECT_DIR$/routes/userinfo.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-148" />
+    <option name="y" value="42" />
+    <option name="width" value="1895" />
+    <option name="height" value="1005" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
+    <property name="last_opened_file_path" value="E:/爱机汇/aijihui" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Server\public\images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8d8e16e-f992-47fa-929e-c030a3a2a517" name="Default Changelist" comment="" />
+      <created>1554170071976</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554170071976</updated>
+      <workItem from="1554170075448" duration="114000" />
+      <workItem from="1554170343033" duration="4831000" />
+      <workItem from="1554183679736" duration="251000" />
+      <workItem from="1554184093729" duration="463000" />
+      <workItem from="1554184808967" duration="796000" />
+      <workItem from="1554276352174" duration="783000" />
+      <workItem from="1555161426409" duration="6041000" />
+      <workItem from="1555169403575" duration="1161000" />
+      <workItem from="1555205799877" duration="591000" />
+      <workItem from="1555206752587" duration="2991000" />
+      <workItem from="1555212963488" duration="16834000" />
+      <workItem from="1555294202429" duration="5455000" />
+      <workItem from="1555373687008" duration="4911000" />
+      <workItem from="1555380960499" duration="16009000" />
+      <workItem from="1555413544013" duration="2609000" />
+      <workItem from="1555421891943" duration="824000" />
+      <workItem from="1555460290694" duration="20348000" />
+      <workItem from="1555500892778" duration="213000" />
+      <workItem from="1555501461010" duration="2377000" />
+      <workItem from="1555506003830" duration="2000" />
+      <workItem from="1555561802705" duration="690000" />
+      <workItem from="1555594940490" duration="1395000" />
+      <workItem from="1555686864687" duration="637000" />
+      <workItem from="1555727242520" duration="9062000" />
+      <workItem from="1555827126480" duration="6416000" />
+      <workItem from="1555855877254" duration="3945000" />
+      <workItem from="1555894676680" duration="4522000" />
+      <workItem from="1555982973891" duration="1274000" />
+      <workItem from="1556088175838" duration="2748000" />
+      <workItem from="1556155535694" duration="2264000" />
+      <workItem from="1556182412108" duration="624000" />
+      <workItem from="1556196292259" duration="1241000" />
+      <workItem from="1556239187142" duration="5486000" />
+      <workItem from="1556329299267" duration="2270000" />
+      <workItem from="1556426518165" duration="2314000" />
+      <workItem from="1556484267286" duration="4481000" />
+      <workItem from="1556510310131" duration="6650000" />
+      <workItem from="1556549731332" duration="1882000" />
+      <workItem from="1556590079303" duration="8189000" />
+      <workItem from="1556675568281" duration="2781000" />
+      <workItem from="1556749417393" duration="710000" />
+      <workItem from="1556752380033" duration="283000" />
+      <workItem from="1556767483185" duration="3429000" />
+      <workItem from="1556852410286" duration="3048000" />
+      <workItem from="1556938934770" duration="10014000" />
+      <workItem from="1556984187151" duration="677000" />
+      <workItem from="1557024454742" duration="632000" />
+      <workItem from="1557031171814" duration="661000" />
+      <workItem from="1557067797172" duration="597000" />
+      <workItem from="1557104485867" duration="621000" />
+      <workItem from="1557110627969" duration="2442000" />
+      <workItem from="1557158335262" duration="75000" />
+      <workItem from="1557190708574" duration="677000" />
+      <workItem from="1557196551844" duration="654000" />
+      <workItem from="1557221783069" duration="8974000" />
+      <workItem from="1557280197361" duration="6720000" />
+      <workItem from="1557365599824" duration="6430000" />
+      <workItem from="1557472216931" duration="598000" />
+      <workItem from="1557681584269" duration="599000" />
+      <workItem from="1557685368973" duration="778000" />
+      <workItem from="1557757584146" duration="1072000" />
+      <workItem from="1557804456777" duration="3036000" />
+      <workItem from="1557824621444" duration="225000" />
+      <workItem from="1557825006260" duration="5494000" />
+      <workItem from="1557841713898" duration="138000" />
+      <workItem from="1557841976303" duration="4607000" />
+      <workItem from="1557881964539" duration="1824000" />
+      <workItem from="1557895693132" duration="6104000" />
+      <workItem from="1557970320411" duration="7986000" />
+      <workItem from="1558054068072" duration="13467000" />
+      <workItem from="1558143548143" duration="9732000" />
+      <workItem from="1558168144380" duration="5839000" />
+      <workItem from="1558195781350" duration="3258000" />
+      <workItem from="1558231905136" duration="12784000" />
+      <workItem from="1558320488674" duration="1134000" />
+      <workItem from="1558324314987" duration="5788000" />
+      <workItem from="1558407100704" duration="4442000" />
+      <workItem from="1558488817283" duration="2237000" />
+      <workItem from="1558521884111" duration="5746000" />
+      <workItem from="1558576545668" duration="9972000" />
+      <workItem from="1558709622206" duration="727000" />
+      <workItem from="1558750773432" duration="6917000" />
+      <workItem from="1558869924924" duration="609000" />
+      <workItem from="1558876818557" duration="897000" />
+      <workItem from="1558879311433" duration="1020000" />
+      <workItem from="1558885776258" duration="994000" />
+      <workItem from="1559007061990" duration="7554000" />
+      <workItem from="1559141786049" duration="882000" />
+      <workItem from="1559274847242" duration="1824000" />
+      <workItem from="1559366753143" duration="6469000" />
+      <workItem from="1559447282018" duration="11905000" />
+      <workItem from="1559523479619" duration="2933000" />
+      <workItem from="1559539085412" duration="637000" />
+      <workItem from="1559548513688" duration="612000" />
+      <workItem from="1559632408438" duration="268000" />
+      <workItem from="1560756264380" duration="709000" />
+      <workItem from="1560828685100" duration="2508000" />
+      <workItem from="1560851932521" duration="51000" />
+      <workItem from="1560852784254" duration="3232000" />
+      <workItem from="1560860026207" duration="13000" />
+      <workItem from="1560860186092" duration="26000" />
+      <workItem from="1560860327520" duration="601000" />
+      <workItem from="1560866641154" duration="1490000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="362857000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-118" y="34" width="1516" height="804" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2743484" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="DB Browser" order="3" weight="0.329927" />
+      <window_info id="Project Explorer" order="4" />
+      <window_info id="Job Explorer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978102" weight="0.23625557" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39619884" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49927008" weight="0.3264402" />
+      <window_info anchor="bottom" id="Console" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="DB Execution Console" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49927008" weight="0.3224852" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50218976" side_tool="true" weight="0.23190546" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/db.js" />
+    <entry file="file://$PROJECT_DIR$/routes/userssubmit.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/protocol/Parser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.3/core-modules/internal/modules/cjs/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="700" column="29" selection-start-line="700" selection-start-column="29" selection-end-line="700" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/babel-core/lib/transformation/file/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10583">
+          <caret line="557" selection-start-line="557" selection-end-line="557" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/111.html" />
+    <entry file="file://E:/test/express-derouter/demo/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/test/express-derouter/demo/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/middleware.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="457" selection-start-line="457" selection-end-line="457" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helper.js" />
+    <entry file="file://$PROJECT_DIR$/public/images/IMG_5960(1).JPG" />
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/forpassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="12" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/upload_8bc51bfe969a1459df01284c7e032264.JPG" />
+    <entry file="file://$PROJECT_DIR$/public/images/upload_16f74bb647f5d879583fc8eae0772501.JPG" />
+    <entry file="file://$PROJECT_DIR$/public/images/upload_531bf6fa9c7f2f2234d76aeb293324f8.JPG" />
+    <entry file="file://$PROJECT_DIR$/public/images/upload_ab35de2d097243ecdf7c6b143b20b205.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/images/upload_8ecb1c4b9371f4a3befc9c5756bfbd55.JPG" />
+    <entry file="file://$PROJECT_DIR$/../Client/src/assets/userinfo/2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/upload_0d0d12252fa7c5c8b938ceb84d15774b.JPG" />
+    <entry file="file://$PROJECT_DIR$/routes/userinfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4617">
+          <caret line="243" column="33" selection-start-line="243" selection-start-column="33" selection-end-line="243" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/innermessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/error.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usersubmit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="97" selection-start-line="28" selection-start-column="97" selection-end-line="28" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/registrastion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1349">
+          <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2128">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/db.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="110" column="15" selection-start-line="110" selection-start-column="15" selection-end-line="110" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
