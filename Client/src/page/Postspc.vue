@@ -24,7 +24,7 @@
          </div>
          <div class="content-right">
            <div class="content-right-info">
-             <span style="float: left">{{formatDateTime(new Date(postspc.posttime))}}</span>
+             <span style="float: left">{{this.common.formatDateTime(new Date(postspc.posttime))}}</span>
              <span style="float: right">1楼</span>
 <!--             <span style="float: right;margin-right: 10px;">只看该作者 | 倒序浏览 | 只看本帖大图</span>-->
            </div>
@@ -52,7 +52,7 @@
            <div class="content-right">
              <div class="content-right-info">
 <!--               new Date转换成中国标准时间，formatDateTime切换格式-->
-               <span style="float: left">{{formatDateTime(new Date(item.replytime))}}</span>
+               <span style="float: left">{{this.common.formatDateTime(new Date(item.replytime))}}</span>
                <span style="float: right">{{item.replyfloor+1}}楼</span>
              </div>
              <div class="content-right-spc">
@@ -76,7 +76,7 @@
                    <span v-show="item1.reciverid!==item1.floorerid">:</span>
                    <span>{{item1.content}}</span>
                    <span style="float: right;padding: 0 10px 0 5px ;font-size: 12px;cursor: pointer;color: #666" @click="replyperson(index,index1)">回复</span>
-                   <span style="float: right;padding-left: 5px;font-size: 12px">{{formatDateTime(new Date(item1.replytime))}}</span>
+                   <span style="float: right;padding-left: 5px;font-size: 12px">{{this.common.formatDateTime(new Date(item1.replytime))}}</span>
                  </li>
                    <el-input
                      type="textarea"
@@ -182,7 +182,7 @@ export default {
           params: {
             postid: this.$route.query.id,
             userid: this.$store.state.userid,
-            collecttime: this.formatDateTime(mydate)
+            collecttime: this.common.formatDateTime(mydate)
           }
         }).then((res) => {
           that.iscollected = !that.iscollected
@@ -266,7 +266,7 @@ export default {
       var replyform = {
         content: this.editor.txt.html(),
         postid: this.$route.query.id,
-        replytime: this.formatDateTime(mydate),
+        replytime: this.common.formatDateTime(mydate),
         floorerid: this.$store.state.userid,
         replyfloor: this.reply.length + 1
       }
@@ -285,7 +285,7 @@ export default {
       axios.get('http://148.70.128.231:3000/post/lastreply', {
         params: {
           postid: this.$route.query.id,
-          lastreplytime: this.formatDateTime(mydate),
+          lastreplytime: this.common.formatDateTime(mydate),
           lastreplyid: this.$store.state.userid
         }
       }).then((res) => {
@@ -330,7 +330,7 @@ export default {
         guesterid: this.$store.state.userid,
         floorerid: this.reply[index].floorerid,
         reciverid: this.reply[index].floorerid,
-        replytime: this.formatDateTime(mydate)
+        replytime: this.common.formatDateTime(mydate)
       }
       console.log(replyczform)
       console.log(this.tlength[index] <= this.textarea[index].length)
@@ -353,19 +353,19 @@ export default {
       } else {
         alert('内容不能为空')
       }
-    },
-    /* 格式化时间日期 */
-    formatDateTime: function (date) {
-      var y = date.getFullYear()
-      var m = date.getMonth() + 1
-      m = m < 10 ? ('0' + m) : m
-      var d = date.getDate()
-      d = d < 10 ? ('0' + d) : d
-      var h = date.getHours()
-      var minute = date.getMinutes()
-      minute = minute < 10 ? ('0' + minute) : minute
-      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
     }
+    /* 格式化时间日期 */
+    // formatDateTime: function (date) {
+    //   var y = date.getFullYear()
+    //   var m = date.getMonth() + 1
+    //   m = m < 10 ? ('0' + m) : m
+    //   var d = date.getDate()
+    //   d = d < 10 ? ('0' + d) : d
+    //   var h = date.getHours()
+    //   var minute = date.getMinutes()
+    //   minute = minute < 10 ? ('0' + minute) : minute
+    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
+    // }
   },
   watch: {
     isLogin () {

@@ -29,7 +29,7 @@
             </h3>
             <div class="content-spc" v-html="item.postcontent">
             </div>
-            <span style="font-family: Arial,SimSun,sans-serif;font-size: 13px;color: #2a8055;">发帖时间:{{formatDateTime(new Date(item.posttime))}}</span>
+            <span style="font-family: Arial,SimSun,sans-serif;font-size: 13px;color: #2a8055;">发帖时间:{{this.common.formatDateTime(new Date(item.posttime))}}</span>
           </li>
         </ul>
       </div>
@@ -77,19 +77,19 @@ export default {
         })
         window.open(routeData.href, '_blank')
       })
-    },
-    /* 格式化时间日期 */
-    formatDateTime: function (date) {
-      var y = date.getFullYear()
-      var m = date.getMonth() + 1
-      m = m < 10 ? ('0' + m) : m
-      var d = date.getDate()
-      d = d < 10 ? ('0' + d) : d
-      var h = date.getHours()
-      var minute = date.getMinutes()
-      minute = minute < 10 ? ('0' + minute) : minute
-      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
     }
+    /* 格式化时间日期 */
+    // formatDateTime: function (date) {
+    //   var y = date.getFullYear()
+    //   var m = date.getMonth() + 1
+    //   m = m < 10 ? ('0' + m) : m
+    //   var d = date.getDate()
+    //   d = d < 10 ? ('0' + d) : d
+    //   var h = date.getHours()
+    //   var minute = date.getMinutes()
+    //   minute = minute < 10 ? ('0' + minute) : minute
+    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
+    // }
   },
   mounted () {
     console.log(this.$route.query.wd)

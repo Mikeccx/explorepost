@@ -13,7 +13,9 @@ import './assets/icon/iconfont.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import Loginpage from '@/Loginpage'
-
+import common from '../src/js/common'
+Vue.prototype.common = common
+// 公共方法
 Vue.use(VueAxios, axios)
 Vue.use(ElementUI)
 Vue.use(Vuex)

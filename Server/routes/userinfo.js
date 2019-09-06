@@ -30,7 +30,7 @@ router.post('/headphoto', (req, res, next) => {
     form.parse(req, (err, fields, files) => {
         if(err) return next(err)
         let id = fields.id //用户名 用于修改用户头像路径
-        let sql = 'UPDATE user set headphoto ='+ '\'http://localhost:3000/public/images/'+id+'.jpg\'' +' where userid ='+id
+        let sql = 'UPDATE user set headphoto ='+ '\'http://148.70.128.231:3000/public/images/'+id+'.jpg\'' +' where userid ='+id
         let oldPath = files.file.path //获取文件路径 ~/public/images/<随机生成的文件名>.<扩展名>
         let imgname = files.file.name //前台上传时的文件名 也就是文件原本的名字
         let userImgname = imgname.replace(/[^.]+/, id) //把扩展名前的文件名给替换掉

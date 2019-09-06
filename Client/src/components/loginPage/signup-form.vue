@@ -73,7 +73,7 @@ export default {
         email: this.signupForm.email,
         username: this.signupForm.username,
         password: md5(this.signupForm.password),
-        registertime: this.formatDateTime(mydate)
+        registertime: this.common.formatDateTime(mydate)
       }
       // 查询是否有重复的
       axios.get('http://148.70.128.231:3000/registrastion/isrepeat', {
@@ -121,19 +121,19 @@ export default {
         console.log(that.$store.state)
         sessionStorage.setItem('store', JSON.stringify(that.$store.state))
       })
-    },
-    /* 格式化时间日期 */
-    formatDateTime: function (date) {
-      var y = date.getFullYear()
-      var m = date.getMonth() + 1
-      m = m < 10 ? ('0' + m) : m
-      var d = date.getDate()
-      d = d < 10 ? ('0' + d) : d
-      var h = date.getHours()
-      var minute = date.getMinutes()
-      minute = minute < 10 ? ('0' + minute) : minute
-      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
     }
+    /* 格式化时间日期 */
+    // formatDateTime: function (date) {
+    //   var y = date.getFullYear()
+    //   var m = date.getMonth() + 1
+    //   m = m < 10 ? ('0' + m) : m
+    //   var d = date.getDate()
+    //   d = d < 10 ? ('0' + d) : d
+    //   var h = date.getHours()
+    //   var minute = date.getMinutes()
+    //   minute = minute < 10 ? ('0' + minute) : minute
+    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
+    // }
   }
 }
 </script>

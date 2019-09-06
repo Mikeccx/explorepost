@@ -88,7 +88,7 @@
                         <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.clicknum}}</span>
                         <i style="vertical-align: middle;" class="iconfont icon-huifu"></i>
                         <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.replynum}}</span>
-                        <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{formatDateTime(new Date(item.posttime))}}</span>
+                        <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{this.common.formatDateTime(new Date(item.posttime))}}</span>
                       </div>
                     </div>
                   </li>
@@ -121,7 +121,7 @@
                         <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.clicknum}}</span>
                         <i style="vertical-align: middle;" class="iconfont icon-huifu"></i>
                         <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.replynum}}</span>
-                        <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{formatDateTime(new Date(item.posttime))}}</span>
+                        <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{this.common.formatDateTime(new Date(item.posttime))}}</span>
                       </div>
                     </div>
                   </li>
@@ -213,7 +213,7 @@ export default {
         params: {
           followedid: this.$route.query.id,
           userid: this.$store.state.userid,
-          followtime: this.formatDateTime(mydate)
+          followtime: this.common.formatDateTime(mydate)
         }
       }).then((res) => {
         that.isfocus = !that.isfocus
@@ -363,19 +363,19 @@ export default {
         query: {id: userid}
       })
       window.open(routeData.href, '_blank')
-    },
-    /* 日期格式化 */
-    formatDateTime: function (date) {
-      var y = date.getFullYear()
-      var m = date.getMonth() + 1
-      m = m < 10 ? ('0' + m) : m
-      var d = date.getDate()
-      d = d < 10 ? ('0' + d) : d
-      var h = date.getHours()
-      var minute = date.getMinutes()
-      minute = minute < 10 ? ('0' + minute) : minute
-      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
     }
+    /* 日期格式化 */
+    // formatDateTime: function (date) {
+    //   var y = date.getFullYear()
+    //   var m = date.getMonth() + 1
+    //   m = m < 10 ? ('0' + m) : m
+    //   var d = date.getDate()
+    //   d = d < 10 ? ('0' + d) : d
+    //   var h = date.getHours()
+    //   var minute = date.getMinutes()
+    //   minute = minute < 10 ? ('0' + minute) : minute
+    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
+    // }
   },
   mounted () {
     this.getuserinfo()

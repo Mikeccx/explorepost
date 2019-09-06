@@ -4,7 +4,7 @@
       <div class="top-nav-left">
         <div class="logo">Explore</div>
         <ul>
-            <li><a class="hover" href="http://148.70.128.231:8080/">主页</a></li>
+            <li><a class="hover" href="http://148.70.128.231:8080/dist/#">主页</a></li>
 <!--          <li><a class="hover" target="_blank"  href="http://localhost:8080/">驴友网</a></li>-->
             <li><a class="hover" target="_blank"  href="https://www.ctrip.com/?sid=155952&allianceid=4897&ouid=index">出行</a></li>
             <li><a class="hover" target="_blank"  href="https://s.taobao.com/search?q=%E9%A9%B4%E5%8F%8B&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306">装备</a></li>

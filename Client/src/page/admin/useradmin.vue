@@ -133,20 +133,20 @@ export default {
       })
     },
     formattime: function (row, column) {
-      return this.formatDateTime(new Date(row.registertime))
+      return this.common.formatDateTime(new Date(row.registertime))
     },
     /* 格式化时间日期 */
-    formatDateTime: function (date) {
-      var y = date.getFullYear()
-      var m = date.getMonth() + 1
-      m = m < 10 ? ('0' + m) : m
-      var d = date.getDate()
-      d = d < 10 ? ('0' + d) : d
-      var h = date.getHours()
-      var minute = date.getMinutes()
-      minute = minute < 10 ? ('0' + minute) : minute
-      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
-    },
+    // formatDateTime: function (date) {
+    //   var y = date.getFullYear()
+    //   var m = date.getMonth() + 1
+    //   m = m < 10 ? ('0' + m) : m
+    //   var d = date.getDate()
+    //   d = d < 10 ? ('0' + d) : d
+    //   var h = date.getHours()
+    //   var minute = date.getMinutes()
+    //   minute = minute < 10 ? ('0' + minute) : minute
+    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
+    // },
     /* 删除用户通过改变userstate临时删除记录仍然保存在记录中未彻底删除 */
     deletetuser: function (index) {
       let userid = this.userinfo[index].userid
@@ -182,6 +182,7 @@ export default {
   },
   mounted () {
     this.getuserinfo()
+    console.log(this.common.a)
   }
 }
 </script>

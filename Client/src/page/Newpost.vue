@@ -103,7 +103,7 @@ export default {
         postsubject: this.value,
         posttitle: this.input,
         postcontent: this.editor.txt.html(),
-        posttime: this.formatDateTime(mydate),
+        posttime: this.common.formatDateTime(mydate),
         postauthorid: this.$store.state.userid
       }
       axios.post('http://148.70.128.231:3000/post/postnew', postform
@@ -116,19 +116,19 @@ export default {
         })
         this.$router.push('/')
       })
-    },
-    /* 格式化时间日期 */
-    formatDateTime: function (date) {
-      var y = date.getFullYear()
-      var m = date.getMonth() + 1
-      m = m < 10 ? ('0' + m) : m
-      var d = date.getDate()
-      d = d < 10 ? ('0' + d) : d
-      var h = date.getHours()
-      var minute = date.getMinutes()
-      minute = minute < 10 ? ('0' + minute) : minute
-      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
     }
+    /* 格式化时间日期 */
+    // formatDateTime: function (date) {
+    //   var y = date.getFullYear()
+    //   var m = date.getMonth() + 1
+    //   m = m < 10 ? ('0' + m) : m
+    //   var d = date.getDate()
+    //   d = d < 10 ? ('0' + d) : d
+    //   var h = date.getHours()
+    //   var minute = date.getMinutes()
+    //   minute = minute < 10 ? ('0' + minute) : minute
+    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
+    // }
   }
 }
 </script>
