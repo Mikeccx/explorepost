@@ -14,6 +14,14 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import Loginpage from '@/Loginpage'
 import common from '../src/js/common'
+// 懒加载
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload, {
+  error: 'dist/error.png', // 这个是请求失败后显示的图片
+  loading: 'dist/loading.gif', // 这个是加载的loading过渡效果
+  try: 2 // 这个是加载图片数量
+})
 Vue.prototype.common = common
 // 公共方法
 Vue.use(VueAxios, axios)

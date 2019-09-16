@@ -1,9 +1,10 @@
 'use strict'
 const path = require('path')
 const utils = require('./utils')
+const webpack = require('webpack')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -24,11 +25,14 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  // 打包排除第3方库，提升首屏加载速度
   externals: {
-    // 'vue': 'Vue',
-    // 'vue-router': 'VueRouter',
-    // 'vuex':'Vuex',
-    // 'axios': 'axios'
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'vuex':'Vuex',
+    'axios': 'axios',
+    'element-ui': 'ELEMENT',
+    'qs' : 'qs'
   },
   output: {
     path: config.build.assetsRoot,
@@ -79,10 +83,40 @@ module.exports = {
         options: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-        }
-      }
+        },
+      },
+      //css 插件优化
+      // {
+      //   test: /\.css$/,
+      //   loader: ExtractTextPlugin.extract({
+      //     fallback: 'vue-style-loader',
+      //     use: ['css-loader']
+      //   })
+      // }
+      // {
+      //   test: /\.vue$/,
+      //   loader: 'vue-loader',
+      //   options: {
+      //     loaders: {
+      //       css: ExtractTextPlugin.extract({
+      //         use: 'css-loader',
+      //         fallback: 'vue-style-loader' // <- 这是vue-loader的依赖，所以如果使用npm3，则不需要显式安装
+      //       })
+      //     }
+      //   }
+      // }
     ]
   },
+  plugins: [
+    //压缩js
+    new webpack.optimize.UglifyJsPlugin({
+      compress() {
+        warnings: false
+      }
+    }),
+    // new ExtractTextPlugin("style.css")
+
+  ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
