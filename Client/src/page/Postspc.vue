@@ -1,112 +1,112 @@
 <template>
-   <div>
-     <Header></Header>
-<!--     楼主模块-->
-     <div class="content-bg">
-<!--       题目-->
-       <div class="content-title">
-         <a>{{postspc.posttitle}}</a>
-         <a class="content-title-right">
-           <el-button plain size="small">只看楼主</el-button>
-           <el-button plain size="small" @click="collect" v-if="iscollected">收藏</el-button>
-           <el-button plain size="small" @click="cancelcollect" v-if="!iscollected">已收藏</el-button>
-           <el-button plain size="small" @click="returnReply">回复</el-button>
-         </a>
-       </div>
-<!--       题目-->
-<!--       内容-->
-       <div class="content">
-         <div class="content-left">
-           <div class="content-left-userhead">
-             <img :src="postspc.headphoto" :onerror="imgnull" style="width: 100%;height: 100%"/>
-           </div>
-           <p style="cursor: pointer" @click="touserinfo(postspc.postauthorid)">{{postspc.postauthor}}</p>
-         </div>
-         <div class="content-right">
-           <div class="content-right-info">
-             <span style="float: left">{{this.common.formatDateTime(new Date(postspc.posttime))}}</span>
-             <span style="float: right">1楼</span>
-<!--             <span style="float: right;margin-right: 10px;">只看该作者 | 倒序浏览 | 只看本帖大图</span>-->
-           </div>
-           <div class="content-right-spc">
-             <div style="min-height: 50px;" v-html="postspc.postcontent"></div>
-           </div>
-           <div class="content-right-footer">
-             <span style="float: right;height:42px;line-height: 42px;margin-right: 10px;"></span>
-           </div>
-         </div>
-       </div>
-<!--       内容-->
-     </div>
-<!--     楼主模块-->
-<!--     回复模块-->
-     <div class="reply" v-for="(item, index) in reply" :key="item.value">
-       <div class="content-bg">
-         <div class="content">
-           <div class="content-left">
-             <div class="content-left-userhead">
-               <img :src="item.headphoto" :onerror="imgnull" style="width: 100%;height: 100%"/>
-             </div>
-             <p style="cursor: pointer" @click="touserinfo(item.floorerid)">{{item.replyername}}</p>
-           </div>
-           <div class="content-right">
-             <div class="content-right-info">
-<!--               new Date转换成中国标准时间，formatDateTime切换格式-->
-               <span style="float: left">{{this.common.formatDateTime(new Date(item.replytime))}}</span>
-               <span style="float: right">{{item.replyfloor+1}}楼</span>
-             </div>
-             <div class="content-right-spc">
-               <div style="height: 50px;" v-html="item.content"></div>
-             </div>
-             <div class="content-right-footer">
-               <transition name="fade" mode="out-in">
-               <span class="content-right-footer-reply" @click="replycz(index)" ref="replycz" v-if="!isopen[index]">回复</span>
-               <span class="content-right-footer-upreply"  @click="standupreply(index)" ref="standupreply" v-if="isopen[index]">收起回复</span>
-               </transition>
-<!--               <div style="clear: both"></div>-->
-<!--               弹出框-->
-               <transition name="bounce">
-               <div class="replycollapse " ref="replycollapse"  v-if="isopen[index]">
-                 <ul>
-                 <li v-for="(item1, index1) in floorreply[index]"  :key="item1.value">
-                   <span @click="touserinfo(item1.guesterid)" style="cursor: pointer;color: #409EFF">{{item1.guestername}}:</span>
-<!--                   <span v-show="item1.reciverid!==item1.floorerid">回复&nbsp;<span>{{item1.recivername}}</span>&nbsp;:</span>-->
-                   <span v-show="item1.reciverid!==item1.floorerid">回复</span>
-                   <span v-show="item1.reciverid!==item1.floorerid" @click="touserinfo(item1.reciverid)" style="cursor: pointer;color: #409EFF">{{item1.recivername}}</span>
-                   <span v-show="item1.reciverid!==item1.floorerid">:</span>
-                   <span>{{item1.content}}</span>
-                   <span style="float: right;padding: 0 10px 0 5px ;font-size: 12px;cursor: pointer;color: #666" @click="replyperson(index,index1)">回复</span>
-                   <span style="float: right;padding-left: 5px;font-size: 12px">{{this.common.formatDateTime(new Date(item1.replytime))}}</span>
-                 </li>
-                   <el-input
-                     type="textarea"
-                     style="width: 95%;padding: 10px 0 0 18px;margin-bottom: 10px;"
-                     :rows="2"
-                     :index = index
-                     placeholder="请输入内容"
-                     v-model="textarea[index]">
-                   </el-input>
-                   <el-button size="small" style="float: right;margin: 0px 21px 10px 0"  type="primary" @click="replyczsubmit(index)">发表</el-button>
-                 </ul>
-               </div>
-               </transition>
-<!--               弹出框-->
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-<!--     回复模块-->
-<!--     回复框-->
-     <div id="div1" class="options" ref="div1"></div>
-     <div id="div2" class="text">
-       <div v-if="!this.$store.state.isLogin" class="tip">你需要登录后才可以回帖<router-link :to="{path:'/Loginpage'}"> 登录</router-link></div>
-     </div>
-     <div class="page-footer">
-     <el-button type="primary" @click="replylz">回复</el-button>
-     </div>
-     <!--     回复框-->
-   </div>
+  <div>
+    <Header></Header>
+    <!--     楼主模块-->
+    <div class="content-bg">
+      <!--       题目-->
+      <div class="content-title">
+        <a>{{postspc.posttitle}}</a>
+        <a class="content-title-right">
+          <el-button plain size="small">只看楼主</el-button>
+          <el-button plain size="small" @click="collect" v-if="iscollected">收藏</el-button>
+          <el-button plain size="small" @click="cancelcollect" v-if="!iscollected">已收藏</el-button>
+          <el-button plain size="small" @click="returnReply">回复</el-button>
+        </a>
+      </div>
+      <!--       题目-->
+      <!--       内容-->
+      <div class="content">
+        <div class="content-left">
+          <div class="content-left-userhead">
+            <img :src="postspc.headphoto" :onerror="imgnull" style="width: 100%;height: 100%"/>
+          </div>
+          <p style="cursor: pointer" @click="touserinfo(postspc.postauthorid)">{{postspc.postauthor}}</p>
+        </div>
+        <div class="content-right">
+          <div class="content-right-info">
+            <span style="float: left">{{formatDateTime(new Date(postspc.posttime))}}</span>
+            <span style="float: right">1楼</span>
+            <!--             <span style="float: right;margin-right: 10px;">只看该作者 | 倒序浏览 | 只看本帖大图</span>-->
+          </div>
+          <div class="content-right-spc">
+            <div style="min-height: 50px;" v-html="postspc.postcontent"></div>
+          </div>
+          <div class="content-right-footer">
+            <span style="float: right;height:42px;line-height: 42px;margin-right: 10px;"></span>
+          </div>
+        </div>
+      </div>
+      <!--       内容-->
+    </div>
+    <!--     楼主模块-->
+    <!--     回复模块-->
+    <div class="reply" v-for="(item, index) in reply" :key="item.value">
+      <div class="content-bg">
+        <div class="content">
+          <div class="content-left">
+            <div class="content-left-userhead">
+              <img :src="item.headphoto" :onerror="imgnull" style="width: 100%;height: 100%"/>
+            </div>
+            <p style="cursor: pointer" @click="touserinfo(item.floorerid)">{{item.replyername}}</p>
+          </div>
+          <div class="content-right">
+            <div class="content-right-info">
+              <!--               new Date转换成中国标准时间，formatDateTime切换格式-->
+              <span style="float: left">{{formatDateTime(new Date(item.replytime))}}</span>
+              <span style="float: right">{{item.replyfloor+1}}楼</span>
+            </div>
+            <div class="content-right-spc">
+              <div style="height: 50px;" v-html="item.content"></div>
+            </div>
+            <div class="content-right-footer">
+              <transition name="fade" mode="out-in">
+                <span class="content-right-footer-reply" @click="replycz(index)" ref="replycz" v-if="!isopen[index]">回复</span>
+                <span class="content-right-footer-upreply"  @click="standupreply(index)" ref="standupreply" v-if="isopen[index]">收起回复</span>
+              </transition>
+              <!--               <div style="clear: both"></div>-->
+              <!--               弹出框-->
+              <transition name="bounce">
+                <div class="replycollapse " ref="replycollapse"  v-if="isopen[index]">
+                  <ul>
+                    <li v-for="(item1, index1) in floorreply[index]"  :key="item1.value">
+                      <span @click="touserinfo(item1.guesterid)" style="cursor: pointer;color: #409EFF">{{item1.guestername}}:</span>
+                      <!--                   <span v-show="item1.reciverid!==item1.floorerid">回复&nbsp;<span>{{item1.recivername}}</span>&nbsp;:</span>-->
+                      <span v-show="item1.reciverid!==item1.floorerid">回复</span>
+                      <span v-show="item1.reciverid!==item1.floorerid" @click="touserinfo(item1.reciverid)" style="cursor: pointer;color: #409EFF">{{item1.recivername}}</span>
+                      <span v-show="item1.reciverid!==item1.floorerid">:</span>
+                      <span>{{item1.content}}</span>
+                      <span style="float: right;padding: 0 10px 0 5px ;font-size: 12px;cursor: pointer;color: #666" @click="replyperson(index,index1)">回复</span>
+                      <span style="float: right;padding-left: 5px;font-size: 12px">{{formatDateTime(new Date(item1.replytime))}}</span>
+                    </li>
+                    <el-input
+                      type="textarea"
+                      style="width: 95%;padding: 10px 0 0 18px;margin-bottom: 10px;"
+                      :rows="2"
+                      :index = index
+                      placeholder="请输入内容"
+                      v-model="textarea[index]">
+                    </el-input>
+                    <el-button size="small" style="float: right;margin: 0px 21px 10px 0"  type="primary" @click="replyczsubmit(index)">发表</el-button>
+                  </ul>
+                </div>
+              </transition>
+              <!--               弹出框-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--     回复模块-->
+    <!--     回复框-->
+    <div id="div1" class="options" ref="div1"></div>
+    <div id="div2" class="text">
+      <div v-if="!this.$store.state.isLogin" class="tip">你需要登录后才可以回帖<router-link :to="{path:'/Loginpage'}"> 登录</router-link></div>
+    </div>
+    <div class="page-footer">
+      <el-button type="primary" @click="replylz">回复</el-button>
+    </div>
+    <!--     回复框-->
+  </div>
 </template>
 
 <script>
@@ -182,7 +182,7 @@ export default {
           params: {
             postid: this.$route.query.id,
             userid: this.$store.state.userid,
-            collecttime: this.common.formatDateTime(mydate)
+            collecttime: this.formatDateTime(mydate)
           }
         }).then((res) => {
           that.iscollected = !that.iscollected
@@ -266,7 +266,7 @@ export default {
       var replyform = {
         content: this.editor.txt.html(),
         postid: this.$route.query.id,
-        replytime: this.common.formatDateTime(mydate),
+        replytime: this.formatDateTime(mydate),
         floorerid: this.$store.state.userid,
         replyfloor: this.reply.length + 1
       }
@@ -285,7 +285,7 @@ export default {
       axios.get('http://148.70.128.231:3000/post/lastreply', {
         params: {
           postid: this.$route.query.id,
-          lastreplytime: this.common.formatDateTime(mydate),
+          lastreplytime: this.formatDateTime(mydate),
           lastreplyid: this.$store.state.userid
         }
       }).then((res) => {
@@ -330,7 +330,7 @@ export default {
         guesterid: this.$store.state.userid,
         floorerid: this.reply[index].floorerid,
         reciverid: this.reply[index].floorerid,
-        replytime: this.common.formatDateTime(mydate)
+        replytime: this.formatDateTime(mydate)
       }
       console.log(replyczform)
       console.log(this.tlength[index] <= this.textarea[index].length)
@@ -353,19 +353,19 @@ export default {
       } else {
         alert('内容不能为空')
       }
-    }
+    },
     /* 格式化时间日期 */
-    // formatDateTime: function (date) {
-    //   var y = date.getFullYear()
-    //   var m = date.getMonth() + 1
-    //   m = m < 10 ? ('0' + m) : m
-    //   var d = date.getDate()
-    //   d = d < 10 ? ('0' + d) : d
-    //   var h = date.getHours()
-    //   var minute = date.getMinutes()
-    //   minute = minute < 10 ? ('0' + minute) : minute
-    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
-    // }
+    formatDateTime: function (date) {
+      var y = date.getFullYear()
+      var m = date.getMonth() + 1
+      m = m < 10 ? ('0' + m) : m
+      var d = date.getDate()
+      d = d < 10 ? ('0' + d) : d
+      var h = date.getHours()
+      var minute = date.getMinutes()
+      minute = minute < 10 ? ('0' + minute) : minute
+      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
+    }
   },
   watch: {
     isLogin () {
@@ -409,7 +409,7 @@ export default {
     min-height: 0px;
     width: 814px;
     margin: auto;
-    overflow: auto;
+    overflow: visible;
     margin-bottom: 10px;
   }
   .replycollapse li{
@@ -454,8 +454,8 @@ export default {
     border-bottom: #e2e2e2 solid 1px;
   }
   .content-title a:first-child{
-     line-height: 46px;
-     padding: 0px 13px;
+    line-height: 46px;
+    padding: 0px 13px;
     font-size: 16px;
     color: #1e6d9b;
     font-weight: bold;
