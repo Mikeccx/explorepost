@@ -2,21 +2,23 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+
 import Vuex from 'vuex'
 // 引入axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import './assets/icon/iconfont.css'
 // import qs from 'qs'
-// 引入element-ui
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+
 // import Loginpage from '@/Loginpage'
 import common from '../src/js/common'
 // 懒加载
 import VueLazyload from 'vue-lazyload'
 
+// 引入element-ui
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import router from './router'
 Vue.use(VueLazyload, {
   error: 'dist/error.png', // 这个是请求失败后显示的图片
   loading: 'dist/loading.gif', // 这个是加载的loading过渡效果
@@ -25,6 +27,7 @@ Vue.use(VueLazyload, {
 Vue.prototype.common = common
 // 公共方法
 Vue.use(VueAxios, axios)
+
 Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.config.productionTip = false

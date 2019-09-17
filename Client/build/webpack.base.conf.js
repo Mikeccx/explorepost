@@ -4,7 +4,14 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-// var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+//优化图
+const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+//按需打包
+
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -86,25 +93,23 @@ module.exports = {
         },
       },
       //css 插件优化
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader?modules', 'postcss-loader'],
+        }),
+      },
+
+
       // {
       //   test: /\.css$/,
       //   loader: ExtractTextPlugin.extract({
       //     fallback: 'vue-style-loader',
       //     use: ['css-loader']
       //   })
-      // }
-      // {
-      //   test: /\.vue$/,
-      //   loader: 'vue-loader',
-      //   options: {
-      //     loaders: {
-      //       css: ExtractTextPlugin.extract({
-      //         use: 'css-loader',
-      //         fallback: 'vue-style-loader' // <- 这是vue-loader的依赖，所以如果使用npm3，则不需要显式安装
-      //       })
-      //     }
-      //   }
-      // }
+      // },
     ]
   },
   plugins: [
@@ -114,8 +119,19 @@ module.exports = {
         warnings: false
       }
     }),
+    //提取公共js
+    new CommonsChunkPlugin({
+      name:"chunk",
+      filename:"chunk.js"//忽略则以name为输出文件的名字，否则以此为输出文件名字
+    }),
     // new ExtractTextPlugin("style.css")
-
+    //打包模块图
+    new BundleAnalyzerPlugin({ analyzerPort: 8919 }),
+    // new ExtractTextPlugin("styles.css"),
+    //按需打包
+    new LodashModuleReplacementPlugin,
+    new webpack.optimize.OccurrenceOrderPlugin,
+    new webpack.optimize.UglifyJsPlugin
   ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
