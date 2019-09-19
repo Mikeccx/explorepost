@@ -133,7 +133,7 @@ export default {
       })
     },
     formattime: function (row, column) {
-      return this.common.formatDateTime(new Date(row.registertime))
+      return this.formatDateTime(new Date(row.registertime))
     },
     /* 格式化时间日期 */
     // formatDateTime: function (date) {

@@ -103,7 +103,7 @@ export default {
         postsubject: this.value,
         posttitle: this.input,
         postcontent: this.editor.txt.html(),
-        posttime: this.common.formatDateTime(mydate),
+        posttime: this.formatDateTime(mydate),
         postauthorid: this.$store.state.userid
       }
       axios.post('http://148.70.128.231:3000/post/postnew', postform

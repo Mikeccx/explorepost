@@ -29,7 +29,7 @@
             </h3>
             <div class="content-spc" v-html="item.postcontent">
             </div>
-            <span style="font-family: Arial,SimSun,sans-serif;font-size: 13px;color: #2a8055;">发帖时间:{{this.common.formatDateTime(new Date(item.posttime))}}</span>
+            <span style="font-family: Arial,SimSun,sans-serif;font-size: 13px;color: #2a8055;">发帖时间:{{formatDateTime(new Date(item.posttime))}}</span>
           </li>
         </ul>
       </div>

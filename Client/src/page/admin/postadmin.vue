@@ -81,18 +81,6 @@ export default {
     formattime: function (row, column) {
       return this.formatDateTime(new Date(row.posttime))
     },
-    /* 格式化时间日期 */
-    formatDateTime: function (date) {
-      var y = date.getFullYear()
-      var m = date.getMonth() + 1
-      m = m < 10 ? ('0' + m) : m
-      var d = date.getDate()
-      d = d < 10 ? ('0' + d) : d
-      var h = date.getHours()
-      var minute = date.getMinutes()
-      minute = minute < 10 ? ('0' + minute) : minute
-      return y + '-' + m + '-' + d + ' ' + h + ':' + minute
-    },
     /* 删除帖子通过改变poststate临时删除记录仍然保存在记录中未彻底删除 */
     deletetpost: function (index) {
       let postid = this.postinfo[index].postid
