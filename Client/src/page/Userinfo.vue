@@ -1,188 +1,188 @@
 <template>
-    <div>
-      <Header></Header>
-      <div class="header-next">
+  <div>
+    <Header></Header>
+    <div class="header-next">
       <div class="userinfo-bg"></div>
-        <div class="content">
-          <div class="headphoto">
-              <div class="headphoto-top">
-                <img :src="userinfo.headphoto" :onerror="imgnull" style="width: 100%;height: 100%;padding-top: 4px;"/>
-<!--                <img src="../assets/userinfo/1.jpg" style="width: 100%;height: 100%;padding-top: 4px;">-->
-              </div>
-              <div class="headphoto-bottom">
-                <div>
-                  <div style="font-size: 16px;font-weight: 700;color: black">{{userinfo.focusnum}}</div>
-                  <div>关注</div>
-                </div>
-                <p style="transform: scaleY(2.5);margin: 0;padding: 0;color:  #F4F4F4" >|</p>
-                <div>
-                  <div style="font-size: 16px;font-weight: 700;color: black">{{userinfo.fansnum}}</div>
-                  <div >粉丝</div>
-                </div>
-              </div>
-        </div>
-          <div class="userinfo-option">
-            <ul>
-              <li><a @click="opening='home'">首页</a></li>
-              <li><a @click="opening='post'">帖子</a></li>
-              <li><a @click="opening='collect'">收藏</a></li>
-              <li><a @click="opening='follow'">关注</a></li>
-              <li><a @click="opening='fans'">粉丝</a></li>
-            </ul>
+      <div class="content">
+        <div class="headphoto">
+          <div class="headphoto-top">
+            <img :src="userinfo.headphoto" :onerror="imgnull" style="width: 100%;height: 100%;padding-top: 4px;"/>
+            <!--                <img src="../assets/userinfo/1.jpg" style="width: 100%;height: 100%;padding-top: 4px;">-->
           </div>
-          <div class="username">
-            <a>{{userinfo.username}}</a>
-<!--            <div style="width: 50%;display: inline-block" v-show="this.userinfo.userid!=this.$store.state.userid || this.$store.state.isLogin">-->
-              <div style="width: 50%;display: inline-block" v-show="this.userinfo.userid!=this.$store.state.userid && this.$store.state.isLogin">
-            <el-button size="small" type="primary" v-if="isfocus" @click="befans">关注</el-button>
-              <el-button size="small" type="danger" v-if="!isfocus" @click="bepasser($route.query.id)">已关注</el-button>
+          <div class="headphoto-bottom">
+            <div>
+              <div style="font-size: 16px;font-weight: 700;color: black">{{userinfo.focusnum}}</div>
+              <div>关注</div>
             </div>
+            <p style="transform: scaleY(2.5);margin: 0;padding: 0;color:  #F4F4F4" >|</p>
+            <div>
+              <div style="font-size: 16px;font-weight: 700;color: black">{{userinfo.fansnum}}</div>
+              <div >粉丝</div>
+            </div>
+          </div>
+        </div>
+        <div class="userinfo-option">
+          <ul>
+            <li><a @click="opening='home'">首页</a></li>
+            <li><a @click="opening='post'">帖子</a></li>
+            <li><a @click="opening='collect'">收藏</a></li>
+            <li><a @click="opening='follow'">关注</a></li>
+            <li><a @click="opening='fans'">粉丝</a></li>
+          </ul>
+        </div>
+        <div class="username">
+          <a>{{userinfo.username}}</a>
+          <!--            <div style="width: 50%;display: inline-block" v-show="this.userinfo.userid!=this.$store.state.userid || this.$store.state.isLogin">-->
+          <div style="width: 50%;display: inline-block" v-show="this.userinfo.userid!=this.$store.state.userid && this.$store.state.isLogin">
+            <el-button size="small" type="primary" v-if="isfocus" @click="befans">关注</el-button>
+            <el-button size="small" type="danger" v-if="!isfocus" @click="bepasser($route.query.id)">已关注</el-button>
           </div>
         </div>
       </div>
-      <div class="infocontent">
-<!--        个人信息-->
-        <div class="infocontent-spc" v-show="this.opening === 'home'">
-          <div class="infocontent-spc-boder">
-            <div class="infocontent-spc-title">
-              <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">基本信息</p>
-            </div>
-            <div class="infocontent-spc-content">
-              <div class="infocontent-spc-content-left">
+    </div>
+    <div class="infocontent">
+      <!--        个人信息-->
+      <div class="infocontent-spc" v-show="this.opening === 'home'">
+        <div class="infocontent-spc-boder">
+          <div class="infocontent-spc-title">
+            <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">基本信息</p>
+          </div>
+          <div class="infocontent-spc-content">
+            <div class="infocontent-spc-content-left">
               <p>性别 &nbsp;&nbsp;{{userinfo.gender}}</p>
               <p>邮箱 &nbsp;&nbsp;{{userinfo.useremail}}</p>
-              </div>
-              <div class="infocontent-spc-content-right">
-                <span style="vertical-align: top;padding-right: 10px;">统计信息</span>
-                <div style="display: inline-block;height:90px">
+            </div>
+            <div class="infocontent-spc-content-right">
+              <span style="vertical-align: top;padding-right: 10px;">统计信息</span>
+              <div style="display: inline-block;height:90px">
                 <a>关注数&nbsp;&nbsp;{{userinfo.focusnum}}</a>
                 <a>粉丝数&nbsp;&nbsp;{{userinfo.fansnum}}</a>
                 <a>帖子数&nbsp;&nbsp;{{userinfo.postnum}}</a>
                 <a>回帖数&nbsp;&nbsp;{{userinfo.replynum}}</a></div>
-              </div>
             </div>
           </div>
         </div>
-<!--        个人信息-->
-<!--        帖子-->
-          <div class="post-spc" v-show="this.opening === 'post'">
-            <div class="post-spc-boder">
-              <div class="post-spc-title" style="background-color: white">
-                <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">发表帖子</p>
-              </div>
-<!--              无内容填充-->
-              <div class="nocontent" v-show="postlist.length===0">暂无帖子</div>
-              <div class="post-spc-content">
-                <ul>
-                  <li v-for="item in postlist" :key="item.value">
-                    <div class="post-spc-content-center">
-                      <span style="line-height: 33px;background-color: #768693;color: white;padding: 4px 8px;font-size: 12px;
-    border-radius: 3px;margin-right: 8px;">帖子</span>
-                      <span  style="cursor: pointer" @click="topostspc(item.postid)">{{item.posttitle}}</span>
-                      <span style="line-height: 33px;background-color: #e1eaef;color: #1e6d9b;padding: 4px 8px;font-size: 12px;
-    border-radius: 3px;margin-right: 8px;">{{item.postsubject}}</span>
-                    </div>
-                    <div class="post-spc-content-footer">
-                      <div class="post-spc-content-footer-info">
-                        <i class="iconfont icon-chakan" style="vertical-align: middle;padding-right: 3px;font-size: 14px;"></i>
-                        <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.clicknum}}</span>
-                        <i style="vertical-align: middle;" class="iconfont icon-huifu"></i>
-                        <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.replynum}}</span>
-                        <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{this.common.formatDateTime(new Date(item.posttime))}}</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-<!--        帖子-->
-<!--        收藏-->
-          <div class="post-spc" v-show="this.opening === 'collect'">
-            <div class="post-spc-boder">
-              <div class="post-spc-title" style="background-color: white">
-                <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">收藏帖子</p>
-              </div>
-<!--              无内容的填充-->
-              <div class="nocontent" v-show="collectlist.length===0">暂无收藏</div>
-              <div class="post-spc-content">
-                <ul>
-                  <li v-for="item in collectlist" :key="item.value">
-                    <div class="post-spc-content-center">
-                      <span style="line-height: 33px;background-color: #768693;color: white;padding: 4px 8px;font-size: 12px;
-    border-radius: 3px;margin-right: 8px;">帖子</span>
-                      <span  style="cursor: pointer" @click="topostspc(item.postid)">{{item.posttitle}}</span>
-                      <span style="line-height: 33px;background-color: #e1eaef;color: #1e6d9b;padding: 4px 8px;font-size: 12px;
-    border-radius: 3px;margin-right: 8px;">{{item.postsubject}}</span>
-                    </div>
-                    <div class="post-spc-content-footer">
-                      <div class="post-spc-content-footer-info">
-                        <i class="iconfont icon-chakan" style="vertical-align: middle;padding-right: 3px;font-size: 14px;"></i>
-                        <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.clicknum}}</span>
-                        <i style="vertical-align: middle;" class="iconfont icon-huifu"></i>
-                        <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.replynum}}</span>
-                        <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{this.common.formatDateTime(new Date(item.posttime))}}</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-<!--        收藏-->
-<!--        关注-->
-          <div class="post-spc" v-show="this.opening === 'follow'">
-            <div class="post-spc-boder">
-              <div class="post-spc-title" style="background-color: white">
-                <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">关注</p>
-              </div>
-              <!--              无内容的填充-->
-              <div class="nocontent" v-show="followlist.length===0">暂无关注</div>
-              <div class="follow-spc">
-                <ul>
-                  <li v-for="(item,index) in followlist" :key="item.value">
-                    <div class="follow-spc-content">
-                       <img class="follow-spc-headphoto" :src="item.headphoto" :onerror="imgnull"/>
-                       <div class="follow-spc-info">
-                         <span style="margin-right: 10px;font-size: 14px;color: #2d64b3;display: inline-block;width: 100px;cursor: pointer" @click="touserinfo(item.userid)">{{item.username}}</span>
-<!--                         <span style="font-size: 12px;display:inline-block; width: 88px">粉丝：&nbsp;{{item.fansnum}}</span>-->
-<!--                         <span style="font-size: 12px;display:inline-block;width: 88px">关注: &nbsp;{{item.focusnum}}</span>-->
-                       </div>
-                      <el-button type="primary" size="small" style="float: right;vertical-align: top" @click="bepasser1(item.userid,index)">取消关注</el-button>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-<!--        关注-->
-        <!--        粉丝-->
-          <div class="post-spc" v-show="this.opening === 'fans'">
-            <div class="post-spc-boder">
-              <div class="post-spc-title" style="background-color: white">
-                <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">粉丝</p>
-              </div>
-              <!--              无内容的填充-->
-              <div class="nocontent" v-show="fanslist.length===0">暂无粉丝</div>
-              <div class="follow-spc">
-                <ul>
-                  <li v-for="item in fanslist" :key="item.value">
-                    <div class="follow-spc-content">
-                      <img class="follow-spc-headphoto" :src="item.headphoto" :onerror="imgnull" />
-                      <div class="follow-spc-info">
-                        <span style="margin-right: 10px;font-size: 14px;color: #2d64b3;display: inline-block;width: 100px;cursor: pointer" @click="touserinfo(item.userid)">{{item.username}}</span>
-<!--                        <span style="font-size: 12px;display:inline-block; width: 88px">粉丝：&nbsp;{{item.focusnum}}</span>-->
-<!--                        <span style="font-size: 12px;display:inline-block;width: 88px">关注: &nbsp;{{item.fansnum}}</span>-->
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        <!--        粉丝-->
       </div>
+      <!--        个人信息-->
+      <!--        帖子-->
+      <div class="post-spc" v-show="this.opening === 'post'">
+        <div class="post-spc-boder">
+          <div class="post-spc-title" style="background-color: white">
+            <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">发表帖子</p>
+          </div>
+          <!--              无内容填充-->
+          <div class="nocontent" v-show="postlist.length===0">暂无帖子</div>
+          <div class="post-spc-content">
+            <ul>
+              <li v-for="item in postlist" :key="item.value">
+                <div class="post-spc-content-center">
+                      <span style="line-height: 33px;background-color: #768693;color: white;padding: 4px 8px;font-size: 12px;
+    border-radius: 3px;margin-right: 8px;">帖子</span>
+                  <span  style="cursor: pointer" @click="topostspc(item.postid)">{{item.posttitle}}</span>
+                  <span style="line-height: 33px;background-color: #e1eaef;color: #1e6d9b;padding: 4px 8px;font-size: 12px;
+    border-radius: 3px;margin-right: 8px;">{{item.postsubject}}</span>
+                </div>
+                <div class="post-spc-content-footer">
+                  <div class="post-spc-content-footer-info">
+                    <i class="iconfont icon-chakan" style="vertical-align: middle;padding-right: 3px;font-size: 14px;"></i>
+                    <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.clicknum}}</span>
+                    <i style="vertical-align: middle;" class="iconfont icon-huifu"></i>
+                    <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.replynum}}</span>
+                    <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{formatDateTime(new Date(item.posttime))}}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--        帖子-->
+      <!--        收藏-->
+      <div class="post-spc" v-show="this.opening === 'collect'">
+        <div class="post-spc-boder">
+          <div class="post-spc-title" style="background-color: white">
+            <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">收藏帖子</p>
+          </div>
+          <!--              无内容的填充-->
+          <div class="nocontent" v-show="collectlist.length===0">暂无收藏</div>
+          <div class="post-spc-content">
+            <ul>
+              <li v-for="item in collectlist" :key="item.value">
+                <div class="post-spc-content-center">
+                      <span style="line-height: 33px;background-color: #768693;color: white;padding: 4px 8px;font-size: 12px;
+    border-radius: 3px;margin-right: 8px;">帖子</span>
+                  <span  style="cursor: pointer" @click="topostspc(item.postid)">{{item.posttitle}}</span>
+                  <span style="line-height: 33px;background-color: #e1eaef;color: #1e6d9b;padding: 4px 8px;font-size: 12px;
+    border-radius: 3px;margin-right: 8px;">{{item.postsubject}}</span>
+                </div>
+                <div class="post-spc-content-footer">
+                  <div class="post-spc-content-footer-info">
+                    <i class="iconfont icon-chakan" style="vertical-align: middle;padding-right: 3px;font-size: 14px;"></i>
+                    <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.clicknum}}</span>
+                    <i style="vertical-align: middle;" class="iconfont icon-huifu"></i>
+                    <span style="vertical-align: middle;padding-right: 3px;font-size: 12px;">{{item.replynum}}</span>
+                    <span style="line-height: 25px;;padding-right: 3px;font-size: 12px;float: right">{{formatDateTime(new Date(item.posttime))}}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--        收藏-->
+      <!--        关注-->
+      <div class="post-spc" v-show="this.opening === 'follow'">
+        <div class="post-spc-boder">
+          <div class="post-spc-title" style="background-color: white">
+            <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">关注</p>
+          </div>
+          <!--              无内容的填充-->
+          <div class="nocontent" v-show="followlist.length===0">暂无关注</div>
+          <div class="follow-spc">
+            <ul>
+              <li v-for="(item,index) in followlist" :key="item.value">
+                <div class="follow-spc-content">
+                  <img class="follow-spc-headphoto" :src="item.headphoto" :onerror="imgnull"/>
+                  <div class="follow-spc-info">
+                    <span style="margin-right: 10px;font-size: 14px;color: #2d64b3;display: inline-block;width: 100px;cursor: pointer" @click="touserinfo(item.userid)">{{item.username}}</span>
+                    <!--                         <span style="font-size: 12px;display:inline-block; width: 88px">粉丝：&nbsp;{{item.fansnum}}</span>-->
+                    <!--                         <span style="font-size: 12px;display:inline-block;width: 88px">关注: &nbsp;{{item.focusnum}}</span>-->
+                  </div>
+                  <el-button type="primary" size="small" style="float: right;vertical-align: top" @click="bepasser1(item.userid,index)">取消关注</el-button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--        关注-->
+      <!--        粉丝-->
+      <div class="post-spc" v-show="this.opening === 'fans'">
+        <div class="post-spc-boder">
+          <div class="post-spc-title" style="background-color: white">
+            <p style="font-size: 16px;margin: 0;padding: 0;line-height: 50px;padding-left: 13px;color: #585858">粉丝</p>
+          </div>
+          <!--              无内容的填充-->
+          <div class="nocontent" v-show="fanslist.length===0">暂无粉丝</div>
+          <div class="follow-spc">
+            <ul>
+              <li v-for="item in fanslist" :key="item.value">
+                <div class="follow-spc-content">
+                  <img class="follow-spc-headphoto" :src="item.headphoto" :onerror="imgnull" />
+                  <div class="follow-spc-info">
+                    <span style="margin-right: 10px;font-size: 14px;color: #2d64b3;display: inline-block;width: 100px;cursor: pointer" @click="touserinfo(item.userid)">{{item.username}}</span>
+                    <!--                        <span style="font-size: 12px;display:inline-block; width: 88px">粉丝：&nbsp;{{item.focusnum}}</span>-->
+                    <!--                        <span style="font-size: 12px;display:inline-block;width: 88px">关注: &nbsp;{{item.fansnum}}</span>-->
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--        粉丝-->
     </div>
+  </div>
 </template>
 
 <script>
@@ -213,7 +213,7 @@ export default {
         params: {
           followedid: this.$route.query.id,
           userid: this.$store.state.userid,
-          followtime: this.common.formatDateTime(mydate)
+          followtime: this.formatDateTime(mydate)
         }
       }).then((res) => {
         that.isfocus = !that.isfocus
@@ -364,18 +364,6 @@ export default {
       })
       window.open(routeData.href, '_blank')
     }
-    /* 日期格式化 */
-    // formatDateTime: function (date) {
-    //   var y = date.getFullYear()
-    //   var m = date.getMonth() + 1
-    //   m = m < 10 ? ('0' + m) : m
-    //   var d = date.getDate()
-    //   d = d < 10 ? ('0' + d) : d
-    //   var h = date.getHours()
-    //   var minute = date.getMinutes()
-    //   minute = minute < 10 ? ('0' + minute) : minute
-    //   return y + '-' + m + '-' + d + ' ' + h + ':' + minute
-    // }
   },
   mounted () {
     this.getuserinfo()
@@ -473,31 +461,31 @@ export default {
     font-size: 14px;
   }
   .userinfo-option ul li a:hover{
-     color: #409EFF;
+    color: #409EFF;
   }
   .header-next{
-      height: 245px;
-      overflow: hidden;
+    height: 245px;
+    overflow: hidden;
   }
-.userinfo-bg{
-  position: relative;
-  width: 110%;
-  height: 270px;
-  margin: -15px;
-  filter: blur(10px);
-  overflow: hidden;
-  background: url("../assets/userinfo/top-bg.jpg") no-repeat center center #f4f4f4;
-  background-size:cover;
-}
-.content{
-  position: absolute;
-  left: 50%;
-  top: 169px;
-  transform: translate(-50%, -50%);    /* 50%为自身尺寸的一半 */
-  width: 980px;
-  background: url("../assets/userinfo/top-bg.jpg") no-repeat center center #f4f4f4;
-  z-index: 0;
-  height: 230px;
+  .userinfo-bg{
+    position: relative;
+    width: 110%;
+    height: 270px;
+    margin: -15px;
+    filter: blur(10px);
+    overflow: hidden;
+    background: url("../assets/userinfo/top-bg.jpg") no-repeat center center #f4f4f4;
+    background-size:cover;
+  }
+  .content{
+    position: absolute;
+    left: 50%;
+    top: 169px;
+    transform: translate(-50%, -50%);    /* 50%为自身尺寸的一半 */
+    width: 980px;
+    background: url("../assets/userinfo/top-bg.jpg") no-repeat center center #f4f4f4;
+    z-index: 0;
+    height: 230px;
   }
   .headphoto{
     z-index: 999;
@@ -624,7 +612,7 @@ export default {
     padding: 20px 20px 0 20px;
   }
   .follow-spc-content:hover{
-   background-color: #E9F2FC;
+    background-color: #E9F2FC;
   }
   .follow-spc-headphoto{
     width: 50px;

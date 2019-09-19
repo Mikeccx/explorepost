@@ -11,7 +11,7 @@ export default {
   name: 'App',
   provide () {
     return {
-      reload: this.reload
+      reload: this.reload // 提供重载方法
     }
   },
   data () {

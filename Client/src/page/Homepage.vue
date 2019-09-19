@@ -12,6 +12,12 @@
     <div class="forumnote">
       <Forumnote></Forumnote>
     </div>
+    <div>
+      <template>
+        <el-radio v-model="p" label="1" >备选项</el-radio>
+        <el-radio v-model="p" label="2">备选项</el-radio>
+      </template>
+    </div>
   </div>
 
 </template>
@@ -26,6 +32,11 @@ export default {
   name: 'Homepage',
   components: {Forumnote, Header, Mycontent, Navtab},
   computed: {
+  },
+  data () {
+    return {
+      p: 'a'
+    }
   },
   mounted () {
   }

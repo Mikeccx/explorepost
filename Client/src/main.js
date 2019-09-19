@@ -11,7 +11,7 @@ import './assets/icon/iconfont.css'
 // import qs from 'qs'
 
 // import Loginpage from '@/Loginpage'
-import common from '../src/js/common'
+import { formatDateTime } from '../src/js/common'
 // 懒加载
 import VueLazyload from 'vue-lazyload'
 
@@ -24,7 +24,8 @@ Vue.use(VueLazyload, {
   loading: 'dist/loading.gif', // 这个是加载的loading过渡效果
   try: 2 // 这个是加载图片数量
 })
-Vue.prototype.common = common
+Vue.prototype.formatDateTime = formatDateTime
+
 // 公共方法
 Vue.use(VueAxios, axios)
 

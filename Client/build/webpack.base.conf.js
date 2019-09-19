@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 //优化图
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 //按需打包
@@ -126,7 +126,7 @@ module.exports = {
     }),
     // new ExtractTextPlugin("style.css")
     //打包模块图
-    new BundleAnalyzerPlugin({ analyzerPort: 8919 }),
+    // new BundleAnalyzerPlugin({ analyzerPort: 8919 }),
     // new ExtractTextPlugin("styles.css"),
     //按需打包
     new LodashModuleReplacementPlugin,
