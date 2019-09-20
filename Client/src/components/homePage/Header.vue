@@ -229,6 +229,8 @@ export default {
     justify-content: space-between;
     height: 38px;
     width: 980px;
+    /*width: 66%;*/
+
     margin: auto;
     /*box-shadow: 0 0 5px rgba(0,0,0,0.24);*/
   }

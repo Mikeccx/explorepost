@@ -138,11 +138,11 @@ export default {
     align-items: center;
   }
   .navtab-bg{
-    width: 100%;
+    width: 980px;
     height: 88px;
     background-color: #fbfbfb;
     display: flex;
-    /*margin: auto;*/
+    margin: auto;
     justify-content: flex-start;
     border-bottom: 1px solid #ebebeb
   }

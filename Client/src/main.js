@@ -19,6 +19,8 @@ import VueLazyload from 'vue-lazyload'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
+// 引入flexble
+import 'lib-flexible'
 Vue.use(VueLazyload, {
   error: 'dist/error.png', // 这个是请求失败后显示的图片
   loading: 'dist/loading.gif', // 这个是加载的loading过渡效果
