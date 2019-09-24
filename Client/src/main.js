@@ -16,14 +16,14 @@ import { formatDateTime } from '../src/js/common'
 import VueLazyload from 'vue-lazyload'
 
 // 引入element-ui
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+// import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 // 引入flexble
 import 'lib-flexible'
 Vue.use(VueLazyload, {
-  error: 'dist/error.png', // 这个是请求失败后显示的图片
-  loading: 'dist/loading.gif', // 这个是加载的loading过渡效果
+  error: 'error.png', // 这个是请求失败后显示的图片
+  loading: 'loading.png', // 这个是加载的loading过渡效果
   try: 2 // 这个是加载图片数量
 })
 Vue.prototype.formatDateTime = formatDateTime
@@ -31,7 +31,7 @@ Vue.prototype.formatDateTime = formatDateTime
 // 公共方法
 Vue.use(VueAxios, axios)
 
-Vue.use(ElementUI)
+// Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.config.productionTip = false
 

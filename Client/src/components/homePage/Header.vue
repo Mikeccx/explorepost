@@ -45,7 +45,7 @@
 <!--          下拉菜单-->
           <el-dropdown class="dropdown">
   <span class="el-dropdown-link">
-    <img :src="this.$store.state.headphoto" :onerror="imgnull" style="vertical-align: middle;"/>
+    <img v-lazy="this.$store.state.headphoto" :onerror="imgnull" style="vertical-align: middle;"/>
     {{this.$store.state.username}}
 <!--    <i class="el-icon-arrow-down el-icon&#45;&#45;right"></i>-->
   </span>
