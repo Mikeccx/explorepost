@@ -112,12 +112,11 @@
 <script>
 import axios from 'axios'
 import Header from '@/components/homePage/Header'
-import Mycontent from '@/components/homePage/Mycontent'
 import E from 'wangeditor'
 // import { mapState } from 'vuex'
 export default {
   name: 'Postspc',
-  components: {Mycontent, Header},
+  components: {Header},
   data () {
     return {
       postspc: [], /* 楼主主题表信息 */

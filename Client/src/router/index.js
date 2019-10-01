@@ -1,20 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Homepage from '@/page/Homepage'
-// import Loginpage from '@/page/Loginpage'
-// import Userinfo from '@/page/Userinfo'
-// import Postspc from '@/page/Postspc'
-// import Newpost from '@/page/Newpost'
-// import Admin from '@/page/Admin'
-// import Adminloginpage from '@/page/Adminloginpage'
-// import Innermessage from '@/page/Innermessage'
-// import editorpersoninfo from '@/page/editorpersoninfo'
-// import Searchpage from '@/page/Searchpage'
-// // 管理系统子路由
-// import useradmin from '@/page/admin/useradmin'
-// import postadmin from '@/page/admin/postadmin'
-// import sendmessage from '@/page/admin/sendmessage'
-// import announce from '@/page/admin/announce'
 // 管理系统子路由
 Vue.use(Router)
 
@@ -24,37 +9,46 @@ export default new Router({
     {
       path: '/',
       name: 'Homepage',
-      component: () => import('@/page/Homepage')
+      // component: () => import('@/page/Homepage')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Homepage')), 'demo')
     },
     {
       path: '/Loginpage',
       name: 'Loginpage',
-      component: () => import('@/page/Loginpage')
+      // component: () => import('@/page/Loginpage')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Loginpage')), 'demo')
+
     },
     {
       path: '/Userinfo',
       name: 'Userinfo',
-      component: () => import('@/page/Userinfo')
+      // component: () => import('@/page/Userinfo')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Userinfo')), 'demo')
+
     },
     {
       path: '/Postspc',
       name: 'Postspc',
-      component: () => import('@/page/Postspc')
+      // component: () => import('@/page/Postspc')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Postspc')), 'demo')
     },
     {
       path: '/Newpost',
       name: 'Newpost',
-      component: () => import('@/page/Newpost')
+      // component: () => import('@/page/Newpost')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Newpost')), 'demo')
     },
     {
       path: '/Searchpage',
       name: 'Searchpage',
-      component: () => import('@/page/Searchpage')
+      // component: () => import('@/page/Searchpage')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Searchpage')), 'demo')
     },
     {
       path: '/Admin',
       name: 'Admin',
-      component: () => import('@/page/Admin'),
+      // component: () => import('@/page/Admin'),
+      component: resolve => require.ensure([], () => resolve(require('@/page/Admin')), 'demo'),
       redirect: '/admin/useradmin',
       meta: {
         title: 'explore管理系统'
@@ -63,39 +57,47 @@ export default new Router({
         {
           path: '/admin/useradmin',
           name: 'useradmin',
-          component: () => import('@/page/admin/useradmin')
+          // component: () => import('@/page/admin/useradmin')
+          component: resolve => require.ensure([], () => resolve(require('@/page/admin/useradmin')), 'demo')
         },
         {
           path: '/admin/postadmin',
           name: 'postadmin',
-          component: () => import('@/page/admin/postadmin')
+          // component: () => import('@/page/admin/postadmin')
+          component: resolve => require.ensure([], () => resolve(require('@/page/admin/postadmin')), 'demo')
         },
         {
           path: '/admin/sendmessage',
           name: 'sendmessage',
-          component: () => import('@/page/admin/sendmessage')
+          // component: () => import('@/page/admin/sendmessage')
+          component: resolve => require.ensure([], () => resolve(require('@/page/admin/sendmessage')), 'demo')
         },
         {
           path: '/admin/announce',
           name: 'announce',
-          component: () => import('@/page/admin/announce')
+          // component: () => import('@/page/admin/announce')
+          component: resolve => require.ensure([], () => resolve(require('@/page/admin/announce')), 'demo')
+
         }
       ]
     },
     {
       path: '/Adminloginpage',
       name: 'Adminloginpage',
-      component: () => import('@/page/Adminloginpage')
+      // component: () => import('@/page/Adminloginpage')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Adminloginpage')), 'demo')
     },
     {
       path: '/Innermessage',
       name: 'Innermessage',
-      component: () => import('@/page/Innermessage')
+      // component: () => import('@/page/Innermessage')
+      component: resolve => require.ensure([], () => resolve(require('@/page/Innermessage')), 'demo')
     },
     {
       path: '/editorpersoninfo',
       name: 'editorpersoninfo',
-      component: () => import('@/page/editorpersoninfo')
+      // component: () => import('@/page/editorpersoninfo')
+      component: resolve => require.ensure([], () => resolve(require('@/page/editorpersoninfo')), 'demo')
     }
   ]
 })
