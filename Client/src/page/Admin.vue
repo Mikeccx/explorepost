@@ -64,10 +64,8 @@ export default {
   methods: {
     // 左侧导航啦栏
     handleOpen (key, keyPath) {
-      console.log(key, keyPath)
     },
     handleClose (key, keyPath) {
-      console.log(key, keyPath)
     }
     // 左侧导航啦栏
   },

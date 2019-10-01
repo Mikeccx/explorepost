@@ -59,10 +59,8 @@ export default {
         {name: '湖南'}, {name: '黑龙江'}, {name: '吉林'}, {name: '江苏'}, {name: '江西'}, {name: '辽宁'}, {name: '内蒙古'},
         {name: '宁夏'}, {name: '宁夏'}, {name: '青海'}, {name: '山东'}, {name: '山西'},
         {name: '陕西'}, {name: '上海'}, {name: '四川'}, {name: '天津'}, {name: '新疆'}, {name: '云南'}, {name: '浙江'}],
-      weather: [],
       content: '',
-      obj: {},
-      message: 1
+      day: new Date()
     }
   },
   computed: {
@@ -79,52 +77,10 @@ export default {
       }).then((res) => {
         that.content = res.data[0].content
       })
-    },
-    ok: function () {
-      // this.$set(this.obj, 'a', 2)
-      this.obj.a = 1
     }
   },
   mounted () {
     this.getannounce()
-    console.log('调用了mounted')
-    console.log(this.message)
-    console.log(this.$el)
-  },
-  beforeCreate () {
-    console.log('调用了beforeCreate')
-    console.log(this.message)
-    console.log(this.$el)
-  },
-  created () {
-    console.log('调用了created')
-    console.log(this.message)
-    console.log(this.$el)
-  },
-  beforeMount () {
-    console.log('调用了beforeMount')
-    console.log(this.message)
-    console.log(this.$el)
-  },
-  beforeUpdate () {
-    console.log('调用了beforeUpdate')
-    console.log(this.message)
-    console.log(this.$el)
-  },
-  updated () {
-    console.log('调用了updated')
-    console.log(this.message)
-    console.log(this.$el)
-  },
-  beforeDestory () {
-    console.log('调用了beforeDestory')
-    console.log(this.message)
-    console.log(this.$el)
-  },
-  destoryed () {
-    console.log('调用了Destoryed')
-    console.log(this.message)
-    console.log(this.$el)
   }
 }
 </script>

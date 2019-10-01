@@ -14,13 +14,6 @@
     <div class="top-nav-right">
       <div class="top-nav-right-search">
           <el-col :span="20" class="top-nav-right-right-tab">
-<!--            <el-autocomplete size="small"-->
-<!--              class="inline-input"-->
-<!--              v-model="state1"-->
-<!--              :fetch-suggestions="querySearch"-->
-<!--              placeholder="请输入内容"-->
-<!--              @select="handleSelect"-->
-<!--            ></el-autocomplete>-->
             <el-autocomplete size="small"
               class="inline-input"
               v-model="state"
@@ -115,7 +108,6 @@ export default {
           userid: this.$store.state.userid
         }
       }).then((res) => {
-        console.log(res.data)
         for (let i = 0; i < res.data.length; i++) {
           if (res.data[i].isread === 0) { that.Changeisread(false) }
         }
@@ -132,7 +124,6 @@ export default {
     /* 跳转到用户信息 */
     touserinfo: function () {
       // this.$router.push('/Userinfo')
-      console.log(this.$store.state.userid)
       let routeData = this.$router.resolve({
         name: 'Userinfo',
         query: {id: this.$store.state.userid}
@@ -141,7 +132,6 @@ export default {
     },
     /* 跳转到修改用户信息 */
     toeditorpersoninfo: function () {
-      console.log(this.$store.state.userid)
       let routeData = this.$router.resolve({
         name: 'editorpersoninfo',
         query: {id: this.$store.state.userid}
@@ -184,8 +174,6 @@ export default {
       }
     },
     handleSelect (item) {
-      // console.log(item.value)
-      // console.log(this.state)
     },
     /* 跳转搜索 */
     tosearch () {
@@ -194,17 +182,11 @@ export default {
         query: {wd: this.state}
       })
       window.open(routeData.href, '_blank')
-      // console.log(this.state)
     }
   },
   mounted () {
     this.loadAll()
-    console.log(this.$store.state.message)
     this.$store.state.message = '我是修改后的message'
-    console.log(this.$store.state.message)
-    // this.getmessagelist()
-    // this.restaurants = this.loadAll()
-    // console.log(this.restaurants)
   },
   watch: {
     update: function () {

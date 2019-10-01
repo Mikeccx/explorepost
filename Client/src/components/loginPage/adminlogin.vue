@@ -42,7 +42,6 @@ export default {
     // 登录提交账户密码验证
     submit: function () {
       const that = this
-      console.log(this.loginForm)
       if (this.loginForm.password == null || this.loginForm.adminname == null) {
         // alert('请输入正确的账号或密码' + (this.loginForm.password & this.loginForm.adminname))
         this.$message.error('账号或密码为空')
@@ -51,10 +50,8 @@ export default {
           adminname: this.loginForm.adminname,
           password: md5(this.loginForm.password)
         }
-        // console.log(md5(this.loginForm.password))
         axios.post('http://148.70.128.231:3000/admin', loginForm)
           .then(function (response) {
-            console.log(response.data)
             if (!response.data) { that.$message.error('账号或密码错误') } else {
               that.$message({
                 message: '欢迎！管理员',

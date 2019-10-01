@@ -81,7 +81,6 @@ export default {
       if (!this.forgetForm.email) { alert('请输入邮箱') } else {
         axios.post('http://148.70.128.231:3000/forpassword', forgetForm)
           .then(function (response) {
-            console.log(response)
           })
           .catch(function (error) {
             console.log(error)
@@ -93,11 +92,9 @@ export default {
       var vCode = {
         vcode: this.forgetForm.vcode
       }
-      // console.log(md5(this.loginForm.password))
       if (!this.forgetForm.vcode) { alert('请先输入验证码') } else {
         axios.post('http://148.70.128.231:3000/forpassword/tochange', vCode)
           .then(function (response) {
-            // console.log(response.data)
             if (response.data === 1) {
               that.$emit('goresetpd', true)
             } else {

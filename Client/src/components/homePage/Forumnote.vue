@@ -43,6 +43,21 @@
         </div>
     </div>
     </form>
+    <div class="forumnote-nav">
+      <div>
+        <div class="block">
+          <el-pagination
+            small
+            layout="prev, pager, next"
+            :total="post.length"
+            :page-size="pagesize"
+            @current-change="current_change"
+            :current-page.sync="currentPage"
+          >
+          </el-pagination>
+        </div></div>
+<!--      <div class="forumnote-nav-post"> <el-button type="primary" @click="newpost">发表新帖</el-button></div>-->
+    </div>
   </div>
 </template>
 
@@ -54,8 +69,6 @@ export default {
   },
   mounted () {
     this.displaypost() // 读取默认版块的帖子列表
-    // this.post = this.$store.state.post
-    console.log(this.post)
   },
   data () {
     return {
@@ -75,7 +88,6 @@ export default {
           waytoreply: this.waytoreply
         }
       }).then((res) => {
-        console.log(res.data)
         this.$store.state.post = res.data
         this.waytoreply = !this.waytoreply
       })
@@ -88,7 +100,6 @@ export default {
           waytopulish: this.waytopulish
         }
       }).then((res) => {
-        console.log(res.data)
         this.$store.state.post = res.data
         this.waytopulish = !this.waytopulish
       })
@@ -119,23 +130,14 @@ export default {
       this.currentPage = currentPage
     },
     displaypost: function () { // ajax 获取post信息 但是每次点击请求一次，通过版块的名字查询数据库
-      // console.log('1')
       axios.get('http://148.70.128.231:3000/post', {
         params: {
           postsubject: this.$store.state.subject
         }
       }).then((res) => {
-        console.log(res.data)
         this.$store.state.post = res.data
       })
     }
-    // tolook: function (id) { // 点击帖子查看详情
-    //   let router = this.$router.resolve({
-    //     path: '/Postspc',
-    //     query: {id: id}
-    //   })
-    //   window.open(router, 'blank')
-    // }
   },
   computed: {
     /* 监听鼠标点击版块 */
@@ -160,7 +162,7 @@ export default {
 
 <style scoped>
   #ajaxtable{
-    height: 607px;
+    /*height: 607px;*/
     margin-bottom: 50px;
   }
   .forumnote-nav{
@@ -186,7 +188,7 @@ export default {
     justify-content: flex-end;
   }
   form{
-    height: 980px;
+    /*height: 980px;*/
     width: 980px;
     background-color:#fff;
     margin: auto;
@@ -226,6 +228,12 @@ export default {
     border-bottom: 1px solid #ccc;
     display: flex;
     flex-wrap: nowrap;
+  }
+  .forumnote-content:hover{
+    background: #F2F2F2;
+  }
+  .forumnote-content a:hover{
+    text-decoration:underline;
   }
   .forumnote-content >div:first-child{
     display: flex;
