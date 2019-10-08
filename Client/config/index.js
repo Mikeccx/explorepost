@@ -8,10 +8,10 @@ module.exports = {
   dev: {
 
     // Paths
-    assetsSubDirectory: 'static',
-    // assetsSubDirectory: './static',
-    assetsPublicPath: '/',
-    // assetsPublicPath: './',
+    // assetsSubDirectory: 'static',
+    assetsSubDirectory: './static',
+    // assetsPublicPath: '/',
+    assetsPublicPath: './',
     proxyTable: {
       '/api': {
         target: 'http://localhost:3000',//后端接口地址
@@ -61,8 +61,8 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    // assetsSubDirectory: './static',
+    // assetsSubDirectory: 'static',
+    assetsSubDirectory: './static',
     // assetsPublicPath: '/',
     assetsPublicPath: './',
     /**
@@ -77,7 +77,7 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
+    productionGzip: false, //开启gzip
     productionGzipExtensions: ['js', 'css'],
 
     // Run the build command with an extra argument to

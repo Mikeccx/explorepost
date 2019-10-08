@@ -9,46 +9,46 @@ export default new Router({
     {
       path: '/',
       name: 'Homepage',
-      // component: () => import('@/page/Homepage')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Homepage')), 'demo')
+      component: () => import('@/page/Homepage')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Homepage')), 'demo')
     },
     {
       path: '/Loginpage',
       name: 'Loginpage',
-      // component: () => import('@/page/Loginpage')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Loginpage')), 'demo')
+      component: () => import('@/page/Loginpage')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Loginpage')), 'demo')
 
     },
     {
       path: '/Userinfo',
       name: 'Userinfo',
-      // component: () => import('@/page/Userinfo')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Userinfo')), 'demo')
+      component: () => import('@/page/Userinfo')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Userinfo')), 'demo')
 
     },
     {
       path: '/Postspc',
       name: 'Postspc',
-      // component: () => import('@/page/Postspc')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Postspc')), 'demo')
+      component: () => import('@/page/Postspc')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Postspc')), 'demo')
     },
     {
       path: '/Newpost',
       name: 'Newpost',
-      // component: () => import('@/page/Newpost')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Newpost')), 'demo')
+      component: () => import('@/page/Newpost')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Newpost')), 'demo')
     },
     {
       path: '/Searchpage',
       name: 'Searchpage',
-      // component: () => import('@/page/Searchpage')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Searchpage')), 'demo')
+      component: () => import('@/page/Searchpage')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Searchpage')), 'demo')
     },
     {
       path: '/Admin',
       name: 'Admin',
-      // component: () => import('@/page/Admin'),
-      component: resolve => require.ensure([], () => resolve(require('@/page/Admin')), 'demo'),
+      component: () => import('@/page/Admin'),
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Admin')), 'demo'),
       redirect: '/admin/useradmin',
       meta: {
         title: 'explore管理系统'
@@ -57,26 +57,26 @@ export default new Router({
         {
           path: '/admin/useradmin',
           name: 'useradmin',
-          // component: () => import('@/page/admin/useradmin')
-          component: resolve => require.ensure([], () => resolve(require('@/page/admin/useradmin')), 'demo')
+          component: () => import('@/page/admin/useradmin')
+          // component: resolve => require.ensure([], () => resolve(require('@/page/admin/useradmin')), 'demo')
         },
         {
           path: '/admin/postadmin',
           name: 'postadmin',
-          // component: () => import('@/page/admin/postadmin')
-          component: resolve => require.ensure([], () => resolve(require('@/page/admin/postadmin')), 'demo')
+          component: () => import('@/page/admin/postadmin')
+          // component: resolve => require.ensure([], () => resolve(require('@/page/admin/postadmin')), 'demo')
         },
         {
           path: '/admin/sendmessage',
           name: 'sendmessage',
-          // component: () => import('@/page/admin/sendmessage')
-          component: resolve => require.ensure([], () => resolve(require('@/page/admin/sendmessage')), 'demo')
+          component: () => import('@/page/admin/sendmessage')
+          // component: resolve => require.ensure([], () => resolve(require('@/page/admin/sendmessage')), 'demo')
         },
         {
           path: '/admin/announce',
           name: 'announce',
-          // component: () => import('@/page/admin/announce')
-          component: resolve => require.ensure([], () => resolve(require('@/page/admin/announce')), 'demo')
+          component: () => import('@/page/admin/announce')
+          // component: resolve => require.ensure([], () => resolve(require('@/page/admin/announce')), 'demo')
 
         }
       ]
@@ -84,20 +84,20 @@ export default new Router({
     {
       path: '/Adminloginpage',
       name: 'Adminloginpage',
-      // component: () => import('@/page/Adminloginpage')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Adminloginpage')), 'demo')
+      component: () => import('@/page/Adminloginpage')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Adminloginpage')), 'demo')
     },
     {
       path: '/Innermessage',
       name: 'Innermessage',
-      // component: () => import('@/page/Innermessage')
-      component: resolve => require.ensure([], () => resolve(require('@/page/Innermessage')), 'demo')
+      component: () => import('@/page/Innermessage')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/Innermessage')), 'demo')
     },
     {
       path: '/editorpersoninfo',
       name: 'editorpersoninfo',
-      // component: () => import('@/page/editorpersoninfo')
-      component: resolve => require.ensure([], () => resolve(require('@/page/editorpersoninfo')), 'demo')
+      component: () => import('@/page/editorpersoninfo')
+      // component: resolve => require.ensure([], () => resolve(require('@/page/editorpersoninfo')), 'demo')
     }
   ]
 })

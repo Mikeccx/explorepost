@@ -9,6 +9,9 @@
     <div class="forumnote">
       <Forumnote></Forumnote>
     </div>
+    <div>
+<!--      <giaoui></giaoui>-->
+    </div>
   </div>
 
 </template>
