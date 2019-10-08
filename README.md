@@ -8,8 +8,9 @@ by this project, i got too much.
 Client 客户端
 ├── build/               # Webpack 配置目录
 ├── config/              # config 生产环境的配置
-├── dist/                # webpack打包后
+├── dist/                # webpack打包后的文件
 ├── src/                 # 源码目录（开发都在这里进行）
+│   ├── api              # 封装的api文件
 │   ├── assets/          # 放置需要经由 Webpack 处理的静态文件(icon、jpg)
 │   ├── components/      # 一些页面组件
 │   ├── js/              # 公共js方法通过vue.prototype注入

@@ -16,6 +16,8 @@ app.all('*', function (req, res, next) {
     next();
 });
 
+//尽量在其他中间件前使用compression
+
 //配置cors
 // app.use(cors({
 //     origin:['http://localhost:8080'],
@@ -41,6 +43,9 @@ var post =require('./routes/post');           //引入
 var userinfo =require('./routes/userinfo');           //引入
 var admin =require('./routes/admin');           //引入
 var innermessage =require('./routes/innermessage');           //引入
+// 添加gzip
+var compression = require('compression')
+app.use(compression());
 app.use('/usersubmit',usersb);
 app.use('/db',dbr);
 app.use('/index',index);
