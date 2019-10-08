@@ -4,7 +4,7 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-// const ExtractTextPlugin = require("extract-text-webpack-plugin"); //压缩css
+const ExtractTextPlugin = require("extract-text-webpack-plugin"); //压缩css
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 //优化图
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
@@ -93,14 +93,14 @@ module.exports = {
         },
       },
       //css 插件优化
-      // {
-      //   test: /\.css$/,
-      //   exclude: /node_modules/,
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: 'style-loader',
-      //     use: ['css-loader?modules', 'postcss-loader'],
-      //   }),
-      // },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader?modules', 'postcss-loader'],
+        }),
+      },
 
 
       // {

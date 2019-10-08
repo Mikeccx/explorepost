@@ -5,7 +5,7 @@
       <el-form-item prop="email" label="邮箱">
         <el-input  title="请输入邮箱" v-model="signupForm.email" placeholder="void@gmail.com"></el-input>
       </el-form-item>
-      <el-form-item prop="username" label="用户名">
+      <el-form-item class="test" prop="username" label="用户名">
         <el-input title="请输入用户名" class="username"  placeholder="Tracy Mcgrady" v-model="signupForm.username"></el-input>
       </el-form-item>
       <el-form-item prop="password" label="密码">
@@ -163,4 +163,9 @@ export default {
     font-size: 14px;
     color: #ccc;
   }
+.login-form-part >>> .el-form-item {
+  margin-bottom: 30px;
+}
+</style>
+<style>
 </style>

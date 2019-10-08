@@ -8,10 +8,10 @@ module.exports = {
   dev: {
 
     // Paths
-    // assetsSubDirectory: 'static',
-    assetsSubDirectory: './static',
-    // assetsPublicPath: '/',
-    assetsPublicPath: './',
+    assetsSubDirectory: 'static',
+    // assetsSubDirectory: './static',
+    assetsPublicPath: '/',
+    // assetsPublicPath: './',
     proxyTable: {
       '/api': {
         target: 'http://localhost:3000',//后端接口地址

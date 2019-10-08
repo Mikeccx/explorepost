@@ -26,7 +26,7 @@
       </div>
       <div class="top-nav-right-button">
       <el-button size="small" @click="goadmin" v-if="!isLogin">管理员登陆</el-button>
-      <el-button type="primary" size="small" @click="gologinpage" v-show="!isLogin">驴友登陆</el-button>
+      <el-button class = 'testbt' type="primary" size="small" @click="gologinpage" v-show="!isLogin">驴友登陆</el-button>
         <div class="logined-info" v-show="isLogin">
 <!--          <el-badge is-dot class="item" v-show="!isread">-->
             <el-badge is-dot class="item" v-show="!this.$store.state.isread">
@@ -297,5 +297,8 @@ export default {
   }
   .el-icon-arrow-down {
     font-size: 12px;
+  }
+  .testbt{
+
   }
 </style>
